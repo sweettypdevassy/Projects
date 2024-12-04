@@ -1,0 +1,9 @@
+# NPM
+package-lock.json
+node_modules/
+
+# Local environment
+.env
+
+# OS files
+.DS_Store
