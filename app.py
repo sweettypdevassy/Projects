@@ -46,7 +46,7 @@ def commit_and_push_changes(defect_id, modified_file):
     """Commit changes and push them to the exemption branch."""
     try:
         # Stage the specific modified file
-        subprocess.run(f"git add {modified_file}", shell=True, check=True)
+        subprocess.run(f"git add .", shell=True, check=True)
         commit_message = f"Exemption for defect {defect_id}"
         subprocess.run(f'git commit -m "{commit_message}"', shell=True, check=True)  # Commit changes
         subprocess.run(f"git push origin {EXEMPTION_BRANCH}", shell=True, check=True)  # Push to the exemption branch
