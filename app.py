@@ -2,7 +2,7 @@ import subprocess
 import os
 
 REPO_PATH = "/Users/harisankars/eclipse/exemption4/Projects"  # Path to your GitHub repository
-EXEMPTION_BRANCH = "exemption1"  # The branch for exemption
+EXEMPTION_BRANCH = "exemption2"  # The branch for exemption
 
 def checkout_exemption_branch():
     """Ensure we are working on the exemption branch."""
