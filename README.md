@@ -45,7 +45,7 @@ Please refer to this guide for instructions. Here are the key points included in
 
 2. **Install Jenkins with Docker:**
    - The steps for installing Jenkins using Docker are clearly explained, ensuring Jenkins runs as a Docker container.
-   - The guide includes running the official Jenkins image, configuring Jenkins for the first time, and accessing it through a web interface.
+   - The guide includes running the official Jenkins image, configuring Jenkins for the first time, and accessing through the web interface.
 
 3. **Set Up Jenkins with Docker:**
    - Details are provided on how to set up Jenkins to use Docker and how to ensure Jenkins has access to Docker commands for building images and running containers.
@@ -54,8 +54,9 @@ Please refer to this guide for instructions. Here are the key points included in
 4. **Configure DockerHub Credentials for Jenkins:**
    - Instructions on how to store DockerHub credentials in Jenkins securely, so Jenkins can push Docker images after building them.
    
-
 ---
+
+
 
 
 
