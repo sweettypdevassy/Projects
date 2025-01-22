@@ -53,6 +53,7 @@ Please refer to this guide for instructions. Here are the key points included in
 
 4. **Configure DockerHub Credentials for Jenkins:**
    - Instructions on how to store DockerHub credentials in Jenkins securely, so Jenkins can push Docker images after building them.
+   
 
 ---
 
