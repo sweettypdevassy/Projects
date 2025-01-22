@@ -68,6 +68,9 @@ cd nodejs-demo
 ### Create the Docker Image
 To containerize the Node.js application, build a Docker image:
 
+```bash
+docker build -t yourusername/nodeapp .
+```
 
 
 
