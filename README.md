@@ -55,6 +55,25 @@ Please refer to this guide for instructions. Here are the key points included in
    - Instructions on how to store DockerHub credentials in Jenkins securely, so Jenkins can push Docker images after building them.
    
 ---
+## Setup and Configuration
+
+### Clone the Repository
+Clone the repository containing the Node.js application:
+
+```bash
+git clone https://github.com/yourusername/nodejs-demo.git
+cd nodejs-demo
+```  
+
+### Create the Docker Image
+To containerize the Node.js application, build a Docker image:
+
+```bash
+docker build -t yourusername/nodeapp .
+```
+
+This will create a Docker image with the tag 
+`yourusername/nodeapp`.
 
 
 
