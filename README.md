@@ -65,6 +65,8 @@ git clone https://github.com/yourusername/nodejs-demo.git
 cd nodejs-demo
 ```  
 
+### Create the Docker Image
+To containerize the Node.js application, build a Docker image:
 
 
 
