@@ -9,4 +9,3 @@ This project demonstrates how to containerize a Node.js application using Docker
 - [Setup and Configuration](#setup-and-configuration)
 - [Jenkins Pipeline](#jenkins-pipeline)
 - [Email Notifications](#email-notifications)
-- [License](#license)
