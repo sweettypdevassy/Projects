@@ -72,6 +72,9 @@ To containerize the Node.js application, build a Docker image:
 docker build -t yourusername/nodeapp .
 ```
 
+This will create a Docker image with the tag `yourusername/nodeapp`.
+
+
 
 
 
