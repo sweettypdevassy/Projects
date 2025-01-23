@@ -101,5 +101,11 @@ pipeline {
             }
         }
 
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t yourusername/nodeapp:$BUILD_NUMBER .'
+            }
+        }
+
 
 
