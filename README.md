@@ -85,6 +85,33 @@ docker run -d -p 3000:3000 yourusername/nodeapp
 The application will be accessible at [http://localhost:3000](http://localhost:3000).
 
 ## Jenkins Pipeline
+Automate the process of building and pushing Docker images using Jenkins. The following Jenkins pipeline script demonstrates the setup.
+
+### Jenkins Pipeline Script (`Jenkinsfile`)
+```groovy
+pipeline {
+    agent any
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+    }
+    stages {
+        stage('SCM Checkout') {
+            steps {
+                git 'https://github.com/yourusername/nodejs-demo.git'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t yourusername/nodeapp:$BUILD_NUMBER .'
+            }
+        }
+
+        stage('Login to DockerHub') {
+            steps {
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
 
 
 
