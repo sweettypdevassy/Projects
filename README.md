@@ -75,7 +75,9 @@ docker build -t yourusername/nodeapp .
 This will create a Docker image with the tag 
 `yourusername/nodeapp`.
 
+### Run the Application in a Docker Container
 
+Once the image is built, run the application inside a Docker container:
 
 
 
