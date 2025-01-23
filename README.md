@@ -94,6 +94,12 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
     }
+    stages {
+        stage('SCM Checkout') {
+            steps {
+                git 'https://github.com/yourusername/nodejs-demo.git'
+            }
+        }
 
 
 
