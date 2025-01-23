@@ -87,5 +87,13 @@ The application will be accessible at [http://localhost:3000](http://localhost:3
 ## Jenkins Pipeline
 Automate the process of building and pushing Docker images using Jenkins. The following Jenkins pipeline script demonstrates the setup.
 
+### Jenkins Pipeline Script (`Jenkinsfile`)
+```groovy
+pipeline {
+    agent any
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+    }
+
 
 
