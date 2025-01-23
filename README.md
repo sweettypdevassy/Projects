@@ -79,5 +79,9 @@ This will create a Docker image with the tag
 
 Once the image is built, run the application inside a Docker container:
 
+```bash
+docker run -d -p 3000:3000 yourusername/nodeapp
+```
+
 
 
