@@ -75,7 +75,16 @@ docker build -t yourusername/nodeapp .
 This will create a Docker image with the tag 
 `yourusername/nodeapp`.
 
+### Run the Application in a Docker Container
 
+Once the image is built, run the application inside a Docker container:
+
+```bash
+docker run -d -p 3000:3000 yourusername/nodeapp
+```
+The application will be accessible at [http://localhost:3000](http://localhost:3000).
+
+## Jenkins Pipeline
 
 
 
