@@ -133,7 +133,10 @@ pipeline {
 - **Login to DockerHub**: Logs into DockerHub using credentials stored in Jenkins.
 - **Push Docker Image**: Pushes the newly built Docker image to DockerHub.
 
-
+### Configure Jenkins with DockerHub Credentials
+In Jenkins, configure your DockerHub credentials:
+1. Go to **Manage Jenkins > Manage Credentials**.
+2. Add a new credential with your DockerHub username and password.
 
 
 
