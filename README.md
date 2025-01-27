@@ -142,6 +142,10 @@ In Jenkins, configure your DockerHub credentials:
 
 Once the pipeline is set up, every time a change is pushed to the GitHub repository, Jenkins will automatically:
 
+1. Checkout the latest code.
+2. Build a new Docker image.
+3. Push the Docker image to DockerHub.
+
 
 
 
