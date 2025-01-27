@@ -112,6 +112,28 @@ pipeline {
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
+        stage('Push Docker Image') {
+            steps {
+                sh 'docker push yourusername/nodeapp:$BUILD_NUMBER'
+            }
+        }
+    }
+    post {
+        always {
+            sh 'docker logout'
+        }
+    }
+}
+```
+
+### Key Steps in the Pipeline
+
+- **SCM Checkout**: Checks out the latest code from the GitHub repository.
+- **Build Docker Image**: Builds a Docker image using the `Dockerfile` and tags it with the Jenkins build number.
+- **Login to DockerHub**: Logs into DockerHub using credentials stored in Jenkins.
+- **Push Docker Image**: Pushes the newly built Docker image to DockerHub.
+
+
 
 
 
