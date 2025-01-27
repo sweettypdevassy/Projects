@@ -138,6 +138,10 @@ In Jenkins, configure your DockerHub credentials:
 1. Go to **Manage Jenkins > Manage Credentials**.
 2. Add a new credential with your DockerHub username and password.
 
+### Running the Jenkins Pipeline
+
+Once the pipeline is set up, every time a change is pushed to the GitHub repository, Jenkins will automatically:
+
 
 
 
