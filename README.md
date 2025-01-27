@@ -133,6 +133,32 @@ pipeline {
 - **Login to DockerHub**: Logs into DockerHub using credentials stored in Jenkins.
 - **Push Docker Image**: Pushes the newly built Docker image to DockerHub.
 
+### Configure Jenkins with DockerHub Credentials
+In Jenkins, configure your DockerHub credentials:
+1. Go to **Manage Jenkins > Manage Credentials**.
+2. Add a new credential with your DockerHub username and password.
+
+### Running the Jenkins Pipeline
+
+Once the pipeline is set up, every time a change is pushed to the GitHub repository, Jenkins will automatically:
+
+1. Checkout the latest code.
+2. Build a new Docker image.
+3. Push the Docker image to DockerHub.
+
+### View the Results
+
+After a successful pipeline run:
+
+- **Check Jenkins Console Output**: Verify that the build and push steps completed successfully.
+- **View the Docker Image on DockerHub**: Log in to your DockerHub account to see the newly created image.
+
+## Email Notifications
+To ensure you are notified of the pipeline's status, configure email notifications in Jenkins. Use the **Email Notification** or **Extended Email Notification** plugins to send build results to your email address.
+
+---
+
+
 
 
 
