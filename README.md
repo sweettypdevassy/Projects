@@ -153,6 +153,11 @@ After a successful pipeline run:
 - **Check Jenkins Console Output**: Verify that the build and push steps completed successfully.
 - **View the Docker Image on DockerHub**: Log in to your DockerHub account to see the newly created image.
 
+## Email Notifications
+To ensure you are notified of the pipeline's status, configure email notifications in Jenkins. Use the **Email Notification** or **Extended Email Notification** plugins to send build results to your email address.
+
+
+
 
 
 
