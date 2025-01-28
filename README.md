@@ -157,7 +157,7 @@ After a successful pipeline run:
 To ensure you are notified of the pipeline's status, configure email notifications in Jenkins. Use the **Email Notification** or **Extended Email Notification** plugins to send build results to your email address.
 
 ## Conclusion
-This project provides an automated pipeline for building and deploying a Node.js application using Docker and Jenkins. 
+This project provides an automated pipeline for building and deploying a Node.js application using Docker and Jenkins.With every change in the repository, Jenkins automatically builds and pushes a new Docker image, simplifying the CI/CD process.
 
 
 
