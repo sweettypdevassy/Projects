@@ -13,6 +13,9 @@
 ## Overview
 The "Node Application Containerized with Docker and Jenkins Integration" project demonstrates the complete process of building and containerizing a Node.js application using Docker, along with automating its CI/CD pipeline through Jenkins.
 
+The Jenkins pipeline is set up to automate builds, generate Docker images of the application, push these images to Docker Hub, and send email notifications with build results.
+
+
   
 
 ## Prerequisites
