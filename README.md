@@ -152,7 +152,7 @@ Once the pipeline is set up, every time code is pushed to the GitHub repository,
 
 After the pipeline runs successfully:
 
-- **
+- **Check Jenkins Console Output: Ensure the build and push steps completed without issues.
 - **View the Docker Image on DockerHub**: Log in to your DockerHub account to see the newly created image.
 
 ## Conclusion
