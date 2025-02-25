@@ -101,4 +101,69 @@ spring.graphql.graphiql.path=/graphiql
 spring.graphql.schema.printer.enabled=true
 spring.graphql.cors.allowed-origins=*
 ```
+### Step 3: Create Entity Classes
+Create `User.java` in `src/main/java/com/example/graphqlapi/entity`:
 
+```java
+package com.example.graphqlapi.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.util.List;
+
+@Entity
+@Table(name = "users")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userId;
+    
+    private String name;
+    
+    @Column(unique = true)
+    private String email;
+    
+    private String password;
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Order> orders;
+}
+```
+
+Create `Order.java` in the same package:
+
+```java
+package com.example.graphqlapi.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "orders")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long orderId;
+    
+    private String productName;
+    
+    private Double price;
+    
+    private LocalDateTime orderDate;
+    
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+}
+```
