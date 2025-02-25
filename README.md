@@ -148,9 +148,9 @@ Once the pipeline is set up, every time code is pushed to the GitHub repository,
 2.Build a new Docker image.
 3. Push the image to DockerHub.
 
-### View the Results
+### Monitoring the Results
 
-After a successful pipeline run:
+After the pipeline runs successfully:
 
 - **Check Jenkins Console Output**: Verify that the build and push steps completed successfully.
 - **View the Docker Image on DockerHub**: Log in to your DockerHub account to see the newly created image.
