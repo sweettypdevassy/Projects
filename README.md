@@ -138,7 +138,7 @@ pipeline {
 ### Configure Jenkins with DockerHub Credentials
 To integrate Jenkins with DockerHub:
 1. Navigate to Manage Jenkins > Manage Credentials.
-2. 
+2. Add a new credential, specifying your DockerHub username and password.
 
 ### Running the Jenkins Pipeline
 
