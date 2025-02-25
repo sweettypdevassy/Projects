@@ -9,3 +9,4 @@ This project demonstrates how to build a comprehensive GraphQL API using Spring 
 - [Example GraphQL Queries](#example-graphql-queries)
 - [Advanced Features](#advanced-features)
 - [Troubleshooting](#troubleshooting)
+
