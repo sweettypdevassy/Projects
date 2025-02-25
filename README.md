@@ -145,8 +145,8 @@ To integrate Jenkins with DockerHub:
 Once the pipeline is set up, every time code is pushed to the GitHub repository, Jenkins will automatically:
 
 1. Checkout the latest code.
-2. Build a new Docker image.
-3. Push the Docker image to DockerHub.
+2.
+3. 
 
 ### View the Results
 
