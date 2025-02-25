@@ -167,3 +167,38 @@ public class Order {
     private User user;
 }
 ```
+
+### Step 4: Create Repository Interfaces
+Create `UserRepository.java` in `src/main/java/com/example/graphqlapi/repository`:
+
+```java
+package com.example.graphqlapi.repository;
+
+import com.example.graphqlapi.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmail(String email);
+}
+```
+
+Create `OrderRepository.java` in the same package:
+
+```java
+package com.example.graphqlapi.repository;
+
+import com.example.graphqlapi.entity.Order;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface OrderRepository extends JpaRepository<Order, Long> {
+    List<Order> findByUserUserId(Long userId);
+}
+```
