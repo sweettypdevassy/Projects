@@ -130,33 +130,33 @@ pipeline {
 
 ### Key Steps in the Pipeline
 
-- **SCM Checkout**: Checks out the latest code from the GitHub repository.
-- **Build Docker Image**: Builds a Docker image using the `Dockerfile` and tags it with the Jenkins build number.
-- **Login to DockerHub**: Logs into DockerHub using credentials stored in Jenkins.
+- **SCM Checkout**: Retrieves the latest code from the GitHub repository.
+- **Build Docker Image**: Creates a Docker image using the Dockerfile and assigns it a tag based
+- **Login to DockerHub**: Authenticates with DockerHub using credentials stored in Jenkins.
 - **Push Docker Image**: Pushes the newly built Docker image to DockerHub.
 
 ### Configure Jenkins with DockerHub Credentials
-In Jenkins, configure your DockerHub credentials:
-1. Go to **Manage Jenkins > Manage Credentials**.
-2. Add a new credential with your DockerHub username and password.
+To integrate Jenkins with DockerHub:
+1. Navigate to Manage Jenkins > Manage Credentials.
+2. Add a new credential, specifying your DockerHub username and password.
 
-### Running the Jenkins Pipeline
+### Executing the Jenkins Pipeline
 
-Once the pipeline is set up, every time a change is pushed to the GitHub repository, Jenkins will automatically:
+Once the pipeline is set up, every time code is pushed to the GitHub repository, Jenkins will automatically:
 
 1. Checkout the latest code.
-2. Build a new Docker image.
-3. Push the Docker image to DockerHub.
+2.Build a new Docker image.
+3. Push the image to DockerHub.
 
-### View the Results
+### Monitoring the Results
 
-After a successful pipeline run:
+After the pipeline runs successfully:
 
-- **Check Jenkins Console Output**: Verify that the build and push steps completed successfully.
-- **View the Docker Image on DockerHub**: Log in to your DockerHub account to see the newly created image.
+- **Check Jenkins Console Output**: Ensure the build and push steps completed without issues.
+- **Verify the Image on DockerHub: Log in to DockerHub to confirm the new image is available.
 
 ## Conclusion
-This project provides an automated pipeline for building and deploying a Node.js application using Docker and Jenkins.With every change in the repository, Jenkins automatically builds and pushes a new Docker image, simplifying the CI/CD process.
+This pipeline automates the process of building and deploying a Node.js application using Docker and Jenkins. With every repository update, Jenkins seamlessly builds and pushes a new Docker image, streamlining the CI/CD workflow.
 
 
 
