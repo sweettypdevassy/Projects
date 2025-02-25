@@ -79,4 +79,26 @@ spring.graphql.graphiql.enabled=true
 4. Click "Generate" to download the project
 5. Extract the ZIP file and open in your IDE
 
+### Step 2: Configure Database
+Create `application.properties` in `src/main/resources`:
+
+```properties
+# Database Configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/graphql_demo
+spring.datasource.username=root
+spring.datasource.password=your_password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA Configuration
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+
+# GraphQL Configuration
+spring.graphql.graphiql.enabled=true
+spring.graphql.graphiql.path=/graphiql
+spring.graphql.schema.printer.enabled=true
+spring.graphql.cors.allowed-origins=*
+```
 
