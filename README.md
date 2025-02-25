@@ -152,8 +152,8 @@ Once the pipeline is set up, every time code is pushed to the GitHub repository,
 
 After the pipeline runs successfully:
 
-- **Check Jenkins Console Output: Ensure the build and push steps completed without issues.
-- **View the Docker Image on DockerHub**: Log in to your DockerHub account to see the newly created image.
+- **Check Jenkins Console Output**: Ensure the build and push steps completed without issues.
+- **Verify the Image on DockerHub: Log in to DockerHub to confirm the new image is available.
 
 ## Conclusion
 This project provides an automated pipeline for building and deploying a Node.js application using Docker and Jenkins.With every change in the repository, Jenkins automatically builds and pushes a new Docker image, simplifying the CI/CD process.
