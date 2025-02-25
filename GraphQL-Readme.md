@@ -57,4 +57,26 @@ spring.graphql.graphiql.enabled=true
    * Start the application: `mvn spring-boot:run`.
    * Test GraphQL queries at `/graphiql`.
 
+## Detailed Implementation
+
+### Step 1: Project Setup
+1. Go to [Spring Initializr](https://start.spring.io/)
+2. Set the following:
+   - Project: Maven
+   - Language: Java
+   - Spring Boot: 3.1.0 or newer
+   - Group: com.example
+   - Artifact: graphql-api
+   - Name: graphql-api
+   - Package name: com.example.graphqlapi
+   - Java: 17
+3. Add dependencies:
+   - Spring Web
+   - Spring Data JPA
+   - Spring for GraphQL
+   - MySQL Driver
+   - Lombok (optional)
+4. Click "Generate" to download the project
+5. Extract the ZIP file and open in your IDE
+
 
