@@ -140,9 +140,9 @@ To integrate Jenkins with DockerHub:
 1. Navigate to Manage Jenkins > Manage Credentials.
 2. Add a new credential, specifying your DockerHub username and password.
 
-### Running the Jenkins Pipeline
+### Executing the Jenkins Pipeline
 
-Once the pipeline is set up, every time a change is pushed to the GitHub repository, Jenkins will automatically:
+Once the pipeline is set up, every time code is pushed to the GitHub repository, Jenkins will automatically:
 
 1. Checkout the latest code.
 2. Build a new Docker image.
