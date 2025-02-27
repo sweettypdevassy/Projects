@@ -232,3 +232,139 @@ public class OrderInput {
     private Long userId;
 }
 ```
+
+### Step 6: Create Service Classes
+Create `UserService.java` in `src/main/java/com/example/graphqlapi/service`:
+
+```java
+package com.example.graphqlapi.service;
+
+import com.example.graphqlapi.dto.UserInput;
+import com.example.graphqlapi.entity.User;
+import com.example.graphqlapi.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class UserService {
+    
+    @Autowired
+    private UserRepository userRepository;
+    
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+    
+    public Optional<User> getUserById(Long id) {
+        return userRepository.findById(id);
+    }
+    
+    public User createUser(UserInput userInput) {
+        User user = new User();
+        user.setName(userInput.getName());
+        user.setEmail(userInput.getEmail());
+        user.setPassword(userInput.getPassword()); // In production, use password encoder
+        
+        return userRepository.save(user);
+    }
+    
+    public boolean deleteUser(Long id) {
+        if (userRepository.existsById(id)) {
+            userRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+    
+    public Optional<User> updateUser(Long id, UserInput userInput) {
+        Optional<User> existingUser = userRepository.findById(id);
+        
+        if (existingUser.isPresent()) {
+            User user = existingUser.get();
+            
+            if (userInput.getName() != null) {
+                user.setName(userInput.getName());
+            }
+            
+            if (userInput.getEmail() != null) {
+                user.setEmail(userInput.getEmail());
+            }
+            
+            if (userInput.getPassword() != null) {
+                user.setPassword(userInput.getPassword()); // In production, use password encoder
+            }
+            
+            return Optional.of(userRepository.save(user));
+        }
+        
+        return Optional.empty();
+    }
+}
+```
+
+Create `OrderService.java` in the same package:
+
+```java
+package com.example.graphqlapi.service;
+
+import com.example.graphqlapi.dto.OrderInput;
+import com.example.graphqlapi.entity.Order;
+import com.example.graphqlapi.entity.User;
+import com.example.graphqlapi.repository.OrderRepository;
+import com.example.graphqlapi.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class OrderService {
+    
+    @Autowired
+    private OrderRepository orderRepository;
+    
+    @Autowired
+    private UserRepository userRepository;
+    
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll();
+    }
+    
+    public Optional<Order> getOrderById(Long id) {
+        return orderRepository.findById(id);
+    }
+    
+    public List<Order> getOrdersByUserId(Long userId) {
+        return orderRepository.findByUserUserId(userId);
+    }
+    
+    public Optional<Order> createOrder(OrderInput orderInput) {
+        Optional<User> user = userRepository.findById(orderInput.getUserId());
+        
+        if (user.isPresent()) {
+            Order order = new Order();
+            order.setProductName(orderInput.getProductName());
+            order.setPrice(orderInput.getPrice());
+            order.setOrderDate(LocalDateTime.now());
+            order.setUser(user.get());
+            
+            return Optional.of(orderRepository.save(order));
+        }
+        
+        return Optional.empty();
+    }
+    
+    public boolean deleteOrder(Long id) {
+        if (orderRepository.existsById(id)) {
+            orderRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+}
+```
