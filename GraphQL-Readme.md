@@ -202,3 +202,33 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     List<Order> findByUserUserId(Long userId);
 }
 ```
+### Step 5: Create DTO Classes
+Create DTO classes for input and output operations. Start with `src/main/java/com/example/graphqlapi/dto/UserInput.java`:
+
+```java
+package com.example.graphqlapi.dto;
+
+import lombok.Data;
+
+@Data
+public class UserInput {
+    private String name;
+    private String email;
+    private String password;
+}
+```
+
+Create `OrderInput.java` in the same package:
+
+```java
+package com.example.graphqlapi.dto;
+
+import lombok.Data;
+
+@Data
+public class OrderInput {
+    private String productName;
+    private Double price;
+    private Long userId;
+}
+```
