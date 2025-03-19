@@ -368,3 +368,22 @@ public class OrderService {
     }
 }
 ```
+### Step 7: Define GraphQL Schema
+Create `schema.graphqls` in `src/main/resources/graphql`:
+
+```graphql
+type User {
+    userId: ID!
+    name: String!
+    email: String!
+    orders: [Order]
+}
+
+type Order {
+    orderId: ID!
+    productName: String!
+    price: Float!
+    orderDate: String!
+    user: User!
+}
+
