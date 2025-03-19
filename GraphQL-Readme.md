@@ -397,4 +397,15 @@ input OrderInput {
     price: Float!
     userId: ID!
 }
+type Query {
+    # User queries
+    getUsers: [User]!
+    getUser(userId: ID!): User
+    
+    # Order queries
+    getOrders: [Order]!
+    getOrder(orderId: ID!): Order
+    getUserOrders(userId: ID!): [Order]!
+}
+
 
