@@ -386,4 +386,15 @@ type Order {
     orderDate: String!
     user: User!
 }
+input UserInput {
+    name: String!
+    email: String!
+    password: String!
+}
+
+input OrderInput {
+    productName: String!
+    price: Float!
+    userId: ID!
+}
 
