@@ -407,5 +407,16 @@ type Query {
     getOrder(orderId: ID!): Order
     getUserOrders(userId: ID!): [Order]!
 }
+type Mutation {
+    # User mutations
+    createUser(input: UserInput!): User!
+    updateUser(userId: ID!, input: UserInput!): User
+    deleteUser(userId: ID!): Boolean!
+    
+    # Order mutations
+    createOrder(input: OrderInput!): Order
+    deleteOrder(orderId: ID!): Boolean!
+}
+```
 
 
