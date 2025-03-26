@@ -516,4 +516,5 @@ public class OrderController {
     }
 }
 ```
-    
+### Step 9: Create DataFetchers (Optional for complex relationships)
+If you need to customize how related entities are fetched, you can implement DataFetchers. Create `UserDataFetcher.java`:
