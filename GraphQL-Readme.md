@@ -518,3 +518,17 @@ public class OrderController {
 ```
 ### Step 9: Create DataFetchers (Optional for complex relationships)
 If you need to customize how related entities are fetched, you can implement DataFetchers. Create `UserDataFetcher.java`:
+
+```java
+package com.example.graphqlapi.datafetcher;
+
+import com.example.graphqlapi.entity.Order;
+import com.example.graphqlapi.entity.User;
+import com.example.graphqlapi.service.OrderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.graphql.data.method.annotation.BatchMapping;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
