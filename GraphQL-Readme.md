@@ -549,3 +549,6 @@ public class UserDataFetcher {
     }
 }
 ```
+
+### Step 10: Configure Main Application
+Update `GraphqlApiApplication.java`:
