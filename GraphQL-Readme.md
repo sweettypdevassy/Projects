@@ -483,4 +483,37 @@ import org.springframework.stereotype.Controller;
 
 import java.util.List;
 import java.util.Optional;
+
+@Controller
+public class OrderController {
+    
+    @Autowired
+    private OrderService orderService;
+    
+    @QueryMapping
+    public List<Order> getOrders() {
+        return orderService.getAllOrders();
+    }
+    
+    @QueryMapping
+    public Optional<Order> getOrder(@Argument Long orderId) {
+        return orderService.getOrderById(orderId);
+    }
+    
+    @QueryMapping
+    public List<Order> getUserOrders(@Argument Long userId) {
+        return orderService.getOrdersByUserId(userId);
+    }
+    
+    @MutationMapping
+    public Optional<Order> createOrder(@Argument OrderInput input) {
+        return orderService.createOrder(input);
+    }
+    
+    @MutationMapping
+    public boolean deleteOrder(@Argument Long orderId) {
+        return orderService.deleteOrder(orderId);
+    }
+}
+```
     
