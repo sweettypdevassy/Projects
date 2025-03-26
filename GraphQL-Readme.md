@@ -421,3 +421,18 @@ type Mutation {
 ### Step 8: Create GraphQL Controllers
 Create `UserController.java` in `src/main/java/com/example/graphqlapi/controller`:
 
+```java
+package com.example.graphqlapi.controller;
+
+import com.example.graphqlapi.dto.UserInput;
+import com.example.graphqlapi.entity.User;
+import com.example.graphqlapi.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.stereotype.Controller;
+
+import java.util.List;
+import java.util.Optional;
+
