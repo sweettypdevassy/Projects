@@ -451,4 +451,21 @@ public class UserController {
     public Optional<User> getUser(@Argument Long userId) {
         return userService.getUserById(userId);
     }
+        @MutationMapping
+    public User createUser(@Argument UserInput input) {
+        return userService.createUser(input);
+    }
+    
+    @MutationMapping
+    public Optional<User> updateUser(@Argument Long userId, @Argument UserInput input) {
+        return userService.updateUser(userId, input);
+    }
+    
+    @MutationMapping
+    public boolean deleteUser(@Argument Long userId) {
+        return userService.deleteUser(userId);
+    }
+}
+```
+
     
