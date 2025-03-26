@@ -418,5 +418,6 @@ type Mutation {
     deleteOrder(orderId: ID!): Boolean!
 }
 ```
-
+### Step 8: Create GraphQL Controllers
+Create `UserController.java` in `src/main/java/com/example/graphqlapi/controller`:
 
