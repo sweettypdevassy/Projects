@@ -436,3 +436,19 @@ import org.springframework.stereotype.Controller;
 import java.util.List;
 import java.util.Optional;
 
+@Controller
+public class UserController {
+    
+    @Autowired
+    private UserService userService;
+    
+    @QueryMapping
+    public List<User> getUsers() {
+        return userService.getAllUsers();
+    }
+    
+    @QueryMapping
+    public Optional<User> getUser(@Argument Long userId) {
+        return userService.getUserById(userId);
+    }
+    
