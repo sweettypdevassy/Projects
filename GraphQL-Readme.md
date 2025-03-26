@@ -532,3 +532,20 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+@Component
+public class UserDataFetcher {
+
+    @Autowired
+    private OrderService orderService;
+
+    @BatchMapping
+    public Map<User, List<Order>> orders(List<User> users) {
+        return users.stream()
+                .collect(Collectors.toMap(
+                        user -> user,
+                        user -> orderService.getOrdersByUserId(user.getUserId())
+                ));
+    }
+}
+```
